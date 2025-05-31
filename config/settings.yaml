@@ -1,0 +1,18 @@
+input:
+  base_path: "data/input/retail_db"
+  file_pattern: "part-00000"
+  
+output:
+  base_path: "data/output"
+  individual_files: true
+  combined_file: true
+  combined_filename: "retail_db_combined.json"
+
+processing:
+  chunk_size: 10000  # For large files
+  validate_data: true
+  
+logging:
+  level: "INFO"
+  file: "logs/conversion.log"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s" 

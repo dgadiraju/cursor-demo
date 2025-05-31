@@ -1,0 +1,138 @@
+tables:
+  departments:
+    columns:
+      department_id:
+        type: "int64"
+        required: true
+        position: 1
+      department_name:
+        type: "string"
+        required: true
+        position: 2
+
+  categories:
+    columns:
+      category_id:
+        type: "int64"
+        required: true
+        position: 1
+      category_department_id:
+        type: "int64"
+        required: true
+        position: 2
+      category_name:
+        type: "string"
+        required: true
+        position: 3
+
+  orders:
+    columns:
+      order_id:
+        type: "int64"
+        required: true
+        position: 1
+      order_date:
+        type: "string"
+        required: true
+        position: 2
+      order_customer_id:
+        type: "int64"  # Fixed from timestamp to int64 for consistency
+        required: true
+        position: 3
+      order_status:
+        type: "string"
+        required: true
+        position: 4
+
+  products:
+    columns:
+      product_id:
+        type: "int64"
+        required: true
+        position: 1
+      product_category_id:  # Fixed typo from product_cateogry_id
+        type: "int64"
+        required: true
+        position: 2
+      product_name:
+        type: "string"  # Fixed empty type
+        required: true
+        position: 3
+      product_description:
+        type: "string"
+        required: false  # Can be empty
+        position: 4
+      product_price:
+        type: "float64"
+        required: true
+        position: 5
+      product_image:
+        type: "string"
+        required: true
+        position: 6
+
+  customers:
+    columns:
+      customer_id:
+        type: "int64"
+        required: true
+        position: 1
+      customer_fname:
+        type: "string"
+        required: true
+        position: 2
+      customer_lname:
+        type: "string"
+        required: true
+        position: 3
+      customer_email:
+        type: "string"
+        required: true
+        position: 4
+      customer_password:
+        type: "string"
+        required: true
+        position: 5
+      customer_street:
+        type: "string"
+        required: true
+        position: 6
+      customer_city:
+        type: "string"
+        required: true
+        position: 7
+      customer_state:
+        type: "string"
+        required: true
+        position: 8
+      customer_zipcode:
+        type: "int64"
+        required: true
+        position: 9
+
+  order_items:
+    columns:
+      order_item_id:
+        type: "int64"
+        required: true
+        position: 1
+      order_item_order_id:
+        type: "int64"
+        required: true
+        position: 2
+      order_item_product_id:
+        type: "int64"
+        required: true
+        position: 3
+      order_item_quantity:
+        type: "int64"
+        required: true
+        position: 4
+      order_item_subtotal:
+        type: "float64"
+        required: true
+        position: 5
+      order_item_product_price:
+        type: "float64"
+        required: true
+        position: 6 
